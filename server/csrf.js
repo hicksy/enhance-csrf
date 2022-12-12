@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-export function createCsrfToken() {
+export function createCsrfToken(req) {
     let csrf_token = req.session.get('csrf');
 
     if (typeof csrf_token === "string") {
@@ -12,7 +12,7 @@ export function createCsrfToken() {
     
 }
 
-export function verifyCsrfToken() {
+export function verifyCsrfToken(req) {
     
     if (!req.body.get('csrf')) {
         throw Error({
