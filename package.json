@@ -1,6 +1,7 @@
 {
   "name": "enhance-csrf",
   "version": "1.0.0",
+  "type": "module",
   "description": "A CSRF component for enhance projects",
   "repository": {
     "type": "git",
