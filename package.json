@@ -1,0 +1,15 @@
+{
+  "name": "enhance-csrf",
+  "version": "1.0.0",
+  "description": "A CSRF component for enhance projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hicksy/enhance-csrf.git"
+  },
+  "author": "Martin Hicks",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hicksy/enhance-csrf/issues"
+  },
+  "homepage": "https://github.com/hicksy/enhance-csrf#readme"
+}
