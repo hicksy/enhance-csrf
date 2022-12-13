@@ -1,15 +1,17 @@
 import { v4 as uuid } from "uuid";
+import arc from '@architect/functions';
 
 export async function createCsrfToken(req) {
-    let csrf_token = req.session['csrf']
+    let session = await arc.http.session.read(req)
 
-    if (typeof csrf_token === "string") {
-        return csrf_token;
-    } else {
+    if (typeof session.csrf_token !== "string") {
         let newCsrfToken = uuid();
-        req.session['csrf'] = newCsrfToken;
+        session.csrf = newCsrfToken;
+    } else {
+        session.csrf;
     }
     
+    req.session = session;
 }
 
 export function verifyCsrfToken(req) {
