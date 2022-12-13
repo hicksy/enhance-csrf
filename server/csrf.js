@@ -3,7 +3,7 @@ import arc from '@architect/functions';
 
 export async function createCsrfToken(req) {
     let session = await arc.http.session.read(req)
-
+console.log(session)
     if (typeof session.csrf_token !== "string") {
         let newCsrfToken = uuid();
         session.csrf = newCsrfToken;
