@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-export function createCsrfToken(req) {
+export async function createCsrfToken(req) {
     let csrf_token = req.session['csrf']
 
     if (typeof csrf_token === "string") {
