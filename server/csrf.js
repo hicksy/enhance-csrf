@@ -7,8 +7,6 @@ export async function createCsrfToken(req) {
     if (typeof session.csrf_token !== "string") {
         let newCsrfToken = uuid();
         session.csrf = newCsrfToken;
-    } else {
-        session.csrf;
     }
     
     req.session = session;
