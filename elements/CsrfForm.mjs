@@ -1,4 +1,4 @@
-import CsrfInput from "./CsrfInput.js";
+import CsrfInput from "./CsrfInput.mjs";
 
 export default function CsrfForm({ html, state }) {
     const { attrs={} } = state
@@ -6,7 +6,7 @@ export default function CsrfForm({ html, state }) {
 
     return html`
     <form action="${action}" method="${method}">
-        ${CsrfInput()}
+        ${CsrfInput(html, state)}
         <slot></slot>
     </form>
 `
