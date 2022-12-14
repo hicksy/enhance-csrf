@@ -4,7 +4,7 @@
 ### example usage
 
 ```
-import { createCsrfToken, verifyCsrfToken } from 'enhance-csrf/server/csrf.js'
+import { createCsrfToken, verifyCsrfToken } from '@hicksy/enhance-csrf/server/csrf.js'
 
 export let get = [createCsrfToken, two]
 
