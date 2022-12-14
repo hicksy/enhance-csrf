@@ -1,8 +1,7 @@
 export default function CsrfInput({ html, state }) {
-    const { attrs={}, csrf_token } = state
+    const { attrs={}, store={} } = state
     const { name = 'csrf' } = attrs
-
     return html`
-        <input type="hidden" name="${name}" value="${csrf_token}" />
+        <input type="hidden" name="${name}" value="${store.csrf_token}" />
     `
-  }
+}
