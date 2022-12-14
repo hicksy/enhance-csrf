@@ -6,7 +6,7 @@ export default function CsrfForm({ html, state }) {
 
     return html`
     <form action="${action}" method="${method}">
-        ${CsrfInput(html, state)}
+        ${CsrfInput({html, state})}
         <slot></slot>
     </form>
 `
