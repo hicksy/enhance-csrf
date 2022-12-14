@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/hicksy/enhance-csrf.git"
   },
-  "author": "Martin Hicks",
+  "author": "Martin Hicks <hello@martinhicks.net>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/hicksy/enhance-csrf/issues"
