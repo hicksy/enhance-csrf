@@ -1,4 +1,4 @@
-import CsrfInput from "./csrf-input.mjs";
+import CsrfInput from "./CsrfInput.mjs";
 
 export default function CsrfForm({ html, state }) {
     const { attrs={} } = state

@@ -1,6 +1,6 @@
 {
   "name": "@hicksy/enhance-csrf",
-  "version": "0.7.0",
+  "version": "0.7.5",
   "type": "module",
   "description": "A CSRF component for enhance projects",
   "repository": {
