@@ -68,7 +68,6 @@ export async function verifyCsrfToken(req) {
     
     if(req.headers['content-type'].includes('multipart/form-data')) {
         req.body = await parse({...req, body: req.body.base64 ? req.body.base64 : req.rawBody});
-        providedCsrf = multiPartBody.csrf;
     } 
 
     providedCsrf = req.body.csrf;
