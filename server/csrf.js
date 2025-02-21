@@ -15,6 +15,7 @@ export async function createCsrfToken(req) {
 export async function verifyCsrfToken(req) {
    
     let providedCsrf;
+    let session = await arc.http.session.read(req)
     
     if(req.headers['content-type'].includes('multipart/form-data')) {
         const multiPartBody = await multipart.parse({...req, body: req.body.base64 ? req.body.base64 : req.rawBody});
@@ -27,7 +28,7 @@ export async function verifyCsrfToken(req) {
         throw Error("Could not find CSRF token in request body");
     }
 
-    if (providedCsrf !== req.session['csrf']) {
+    if (providedCsrf !== session['csrf']) {
         throw Error("Could not verify CSRF token.");
     }
     

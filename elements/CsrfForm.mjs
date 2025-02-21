@@ -22,6 +22,7 @@ export default function CsrfForm({ html, state }) {
     if(id) optional.push(`id="${id}"`);
     if(novalidate) optional.push(`novalidate`);
     if(rel) optional.push(`rel="${rel}"`);
+    if(attrs.class) optional.push(`class="${attrs.class}"`);
 
     return html`
     <form action="${action}" method="${method}" ${optional.join(' ')}>
