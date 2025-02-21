@@ -1,6 +1,6 @@
 {
   "name": "@hicksy/enhance-csrf",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "type": "module",
   "description": "A CSRF component for enhance projects",
   "repository": {
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/hicksy/enhance-csrf#readme",
   "dependencies": {
     "@architect/functions": "^8.1.7",
-    "lambda-multipart-parser": "^1.0.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "busboy": "^1.6.0"
   }
 }
