@@ -46,7 +46,7 @@ const parse = (event) => new Promise((resolve, reject) => {
     });
 
     const encoding = event.encoding || (event.isBase64Encoded ? "base64" : "binary");
-
+ 
     _busboy.write(event.body, encoding);
     _busboy.end();
 });
@@ -67,11 +67,11 @@ export async function verifyCsrfToken(req) {
     let session = await arc.http.session.read(req)
     
     if(req.headers['content-type'].includes('multipart/form-data')) {
-        const multiPartBody = await parse({...req, body: req.body.base64 ? req.body.base64 : req.rawBody});
+        req.body = await parse({...req, body: req.body.base64 ? req.body.base64 : req.rawBody});
         providedCsrf = multiPartBody.csrf;
-    } else {
-        providedCsrf = req.body.csrf;
-    }
+    } 
+
+    providedCsrf = req.body.csrf;
     
     if (!providedCsrf) {
         throw Error("Could not find CSRF token in request body");
